@@ -83,6 +83,10 @@
 	background-color: rgba(222, 222, 222, 0.75);
 	width: 100%;
 	height: 100px;
+	text-align: center;
+	font-size: 30px;
+	padding-top: 10px;
+
 }
 
 .top_self
@@ -109,9 +113,7 @@
 	position: relative;
 	margin: auto;
 	padding: 0;
-	
-	width: 50%;
-
+	width: 40%;
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s;
 	animation-name: animatetop;
@@ -132,9 +134,16 @@
 
 .close {
 	color: white;
-	float: right;
 	font-size: 28px;
 	font-weight: bold;
+	background-color: black;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	line-height: 24px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 
 .close:hover,
@@ -142,12 +151,22 @@
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
+	background-color: white;
+	border:1px solid black ;
 }
 
 .modal-header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .modal-footer {
 	padding: 2px 16px;
@@ -158,5 +177,5 @@
 {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, .4);
+	background-color: rgba(0, 0, 0, .7);
 }
