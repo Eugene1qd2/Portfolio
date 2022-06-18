@@ -46,12 +46,11 @@
 	<div class="my_work">
 		
 		<div class="top_self">
-			<div class="logo_block">
+			<div class="logo_block" >
 				<div class="myself unselectable" id="myBtn">
 					<img src="Pictures/me3.jpeg" style="margin-top:-50%;" width="300"  alt="">
 					<div class="over_img">🔍</div>
 				</div>
-				
 			</div>
 			
 			<div class="info_block">
@@ -62,6 +61,12 @@
 				<h3><img class="icon" src="Pictures/github.png"> github: @Eugene1qd2</h3>
 			</div>
 		</div>
+		<div class="photos">
+			<div class="photo"><img src="Pictures/Photos/1.jpeg" width="300" alt=""></div>
+			<div class="photo"><img src="Pictures/Photos/2.jpeg" width="300" alt=""></div>
+			<div class="photo"><img src="Pictures/Photos/3.jpeg" style="margin-left: -33%;" height="300" alt=""></div>
+			<div class="photo"><img src="Pictures/Eugene1qd2.png" height="300" alt=""></div>
+		</div>
 		<div class="divider"></div>
 		<div class="my_h unselectable">
 			<div class="stick"></div>
@@ -69,6 +74,7 @@
 			<div class="stick"></div>
 		</div>
 		<h2>Здравствуйте, меня зовут Егвений и я программист.🥂</h2><br>
+
 		<h3 class="flexed_h">
 			
 			<ul>
@@ -94,7 +100,7 @@
 				<li><img class="icon" src="Pictures/database.png"> SQL</li>
 				<li><img class="icon" src="Pictures/css-3.png">CSS3</li>
 				<li><img class="icon" src="Pictures/uk.png"> English B1-B2</li>
-				<li><img class="icon" src="Pictures/pl.png"> Poland A2-B1</li>
+				<li><img class="icon" src="Pictures/pl.png"> Polish A2-B1</li>
 			</ul>
 			<ul>
 				<p>Приложения Adobe 🎨:</p><br>
@@ -168,5 +174,37 @@
 		</div>
 	</div>
 	<script src="Scripts/script.js"></script>
+	<div class="my_work">
+		<div class="my_h">
+			<div class="stick"></div>
+			<h1>Обратная связь</h1>
+			<div class="stick"></div>
+		</div>
+		<div class="forma">
+			<div class="form-at">
+				<div class="validate-input-at w-50" data-validate="Обязательное поле">
+					<input class="input-at" type="text" name="name-at" placeholder="Ваше имя" />
+					<span class="focus-input-at"></span>
+				</div>
+				<div class="validate-input-at w-50" data-validate="Обязательное поле">
+					<input class="input-at" type="text" name="email-at" placeholder="Ваш телефон или email" />
+					<span class="focus-input-at"></span>
+				</div>
+				<div class="validate-input-at" data-validate="Обязательное поле">
+					<textarea class="input-at" name="message-at" placeholder="Ваше сообщение"></textarea>
+					<span class="focus-input-at"></span>
+				</div>
+				<input checked="checked" class="input-at" id="checkbox-at" type="checkbox" name="checkbox-at" onchange="document.getElementById('submit-at').disabled = !this.checked;" />
+				<label for="checkbox-at">
+					Настоящим подтверждаю, что я ознакомлен и согласен с <a href="https://yandex.by/legal/rules/">пользовательским соглашением</a>
+				</label> 
+				<input type="hidden" name="subject-at" value="Тема формы">
+				<button id="submit-at" class="form-at-btn">Отправить</button>
+			</div>
+			<div class="result-at"></div>
+		</div>
+	</div>
+	
+
 </body>
 </html>
