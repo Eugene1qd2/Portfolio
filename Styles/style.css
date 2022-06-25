@@ -1,6 +1,6 @@
 
 ::-webkit-scrollbar {
-	width: 20px;
+	width: 15px;
 }
 
 ::-webkit-scrollbar-track {
@@ -97,6 +97,13 @@
 	border-radius:150px;
 	position: relative;
 }
+@media(max-width: 1040px)
+{
+	.myself
+	{
+		margin: 20px;
+	}
+}
 .over_img
 {
 	transition: 0.2s ease-in-out;
@@ -152,6 +159,37 @@
 	box-sizing: border-box;
 	border: 1px solid lightgray;
 	overflow: hidden;
+	transition: 0.2s ease-in-out;
+}
+.img1
+{
+	background-image: url("../Pictures/Photos/1.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+}
+.img2
+{
+	background-image: url("../Pictures/Photos/2.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.img3
+{
+	background-image: url("../Pictures/Photos/3.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.img4
+{
+	background-image: url("../Pictures/Eugene1qd2.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.photo:hover
+{
+	transform: scale(1.03);
 }
 .modal-content {
 	position: relative;
@@ -514,4 +552,67 @@ input.input-at:focus {
 	{
 		grid-template-columns: repeat(1, 1fr);
 	}
+}
+.preloader-5 {
+	display: block;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	margin: 30px auto;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #337AB7;
+	animation: preloader-5-spin 2s linear infinite;
+}
+.preloader-5:before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #BFE2FF;
+	animation: preloader-5-spin 3s linear infinite;
+}
+.preloader-5:after {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #337AB7;
+	animation: preloader-5-spin 1.5s linear infinite;
+}
+@keyframes preloader-5-spin {
+	0%   {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+.preloader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	display: flex;
+	align-items: center;
+	justify-content: center;  
+	background: #fff;
+	transition: all 0.5s;
+	opacity: 1;
+}
+.preloader-remove {
+	opacity: 0;
+	z-index: -10;
 }

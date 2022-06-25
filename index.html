@@ -8,13 +8,13 @@
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-	
-
+	<script src="Scripts/jquery.ripples.js"></script>
+	<script src="Scripts/jquery.ripples-min.js"></script>
 	<link rel="stylesheet" href="Styles/style.css">
 	<title>Eugene1qd2's Portfolio</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-light">
+	<nav class="fixed-top navbar navbar-expand-lg bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand unselectable" href="index.html">Eugene1qd2</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
@@ -30,7 +30,15 @@
 		</div>
 	</nav>
 
-
+	<div class="preloader">
+		<div class="preloader-5"></div>
+	</div>
+	
+	<script>
+		$(window).on('load', function () {
+			$('.preloader').addClass("preloader-remove");     
+		});	
+	</script>
 	<div id="myModal" class="modal">
 
 		<div class="back" id="window">
@@ -63,10 +71,10 @@
 			</div>
 		</div>
 		<div class="photos">
-			<div class="photo"><img src="Pictures/Photos/1.jpeg" width="300" alt=""></div>
-			<div class="photo"><img src="Pictures/Photos/2.jpeg" width="300" alt=""></div>
-			<div class="photo"><img src="Pictures/Photos/3.jpeg" style="margin-left: -33%;" height="300" alt=""></div>
-			<div class="photo"><img src="Pictures/Eugene1qd2.png" height="300" alt=""></div>
+			<div class="photo img1"></div>
+			<div class="photo img2"></div>
+			<div class="photo img3"></div>
+			<div class="photo img4"></div>
 		</div>
 		<div class="divider"></div>
 		<div class="my_h unselectable">
@@ -74,10 +82,58 @@
 			<h1>Обо мне</h1>
 			<div class="stick"></div>
 		</div>
-		<h2>Здравствуйте, меня зовут Евгений и я программист.🥂</h2><br>
+
+		<script>
+			var inter=true;
+			var	images=['.img2','.img3','.img4','.img1']
+			function ui(val) {
+				switch(val)
+				{
+					case true:
+					for (var i = 0; i < images.length ; i++) {
+						$(images[i]).ripples('play');	
+					}
+					break;
+
+					case false:
+					for (var i = 0; i < images.length ; i++) {
+						$(images[i]).ripples('pause');	
+					}
+					break;
+
+					case 'on':
+					for (var i = 0; i < images.length ; i++) {
+						$(images[i]).ripples({
+							resolution: 512,
+							dropRadius: 20,
+							perturbance: 0.04,
+							interactive: inter	
+						});
+					}	
+					break;
+
+					case 'off':
+					for (var i = 0; i < images.length ; i++) {
+						$(images[i]).ripples('destroy');	
+					}
+					break;
+				}
+			}
+			$(document).ready(function() {
+				for (var i = 0; i < images.length ; i++) {
+					$(images[i]).ripples({
+						resolution: 512,
+						dropRadius: 20,
+						perturbance: 0.04,
+						interactive: inter	
+					});	
+				}
+			});
+		</script>
+		<h2>Здравствуйте, меня зовут Егвений и я программист.🥂</h2><br>
 
 		<h3 class="flexed_h">
-			
+
 			<ul>
 				<p>Изучаю 🎧:</p><br>
 				<li><img class="icon" src="Pictures/bootstrap.png"> Bootstrap</li>
@@ -205,7 +261,7 @@
 			<div class="result-at"></div>
 		</div>
 	</div>
-	
+
 	<div class="bottomer" id="contacts">
 		<a href="https://vk.com/evgeny.kuznetsov2000"><img class="pict" src="Pictures/vk.png"></a>
 		<a href="https://t.me/Eugene1qd2"><img class="pict" src="Pictures/telegram.png"></a>
